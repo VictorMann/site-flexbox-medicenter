@@ -1,0 +1,22 @@
+@cor-teste: #AAA;
+body {
+    padding: 0;
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        background: @cor-teste;
+        width: 990px;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    background: darken(@cor-teste, 10);
+}

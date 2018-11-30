@@ -1,20 +1,35 @@
 // variaveis
 @cor-teste: #AAA;
 
+// tmp
+.bg {
+	background-color: @cor-teste;
+}
+
+
+// base
+.flx-c {
+	display: flex;
+	justify-content: center;
+}
+.container {
+	width: 990px;
+	min-height: 10px;
+}
+
 
 body {
 	padding: 0;
 	margin: 0;
 }
+
+/**  TOPO **/
 header {
-	display: flex;
-	justify-content: center;
 	height: 120px;
 
 	.container {
 		display: flex;
 		justify-content: space-between;
-		width: 990px;
 	}
 }
 .logo {
@@ -46,4 +61,11 @@ header {
 			color: #FFF;
 		}
 	}
+}
+
+/** BANNER **/
+.banner {
+	background: url(../images/img1.jpg) no-repeat center;
+	background-size: cover;
+	min-height: 690px;
 }

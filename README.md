@@ -2,7 +2,7 @@
 <h3>Site Medicenter com flexbox e html semântico</h3>
 <section>
     <p>
-        Este projeto destina-se como aprimoramento profissional, visando capacitação e qualificação para o mercado de trabalho. Sem fins comerciais.
+        Este projeto destina-se como aprimoramento profissional, visando capacitação e qualificação para o mercado de trabalho. Com finalidade apenas acadêmica.
     </p>
 </section>
 <section>

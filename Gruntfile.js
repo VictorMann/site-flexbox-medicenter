@@ -22,14 +22,29 @@ module.exports = function(grunt) {
                 files: 'assets/less/**/*.less', 
                 tasks: 'less:compilar'
             }
+        },
+        browserSync: {
+            options: {
+                watchTask: true,
+                server: {
+                    baseDir: "./"
+                }
+            },
+            public: {
+                bsFiles: {
+                    src: ['**/*']
+                }
+            }
         }
     });
 
     // register tasks
     grunt.registerTask('default', ['clean', 'watch']);
+    grunt.registerTask('server', ['browserSync', 'watch']);
 
     // loading tasks
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-browser-sync');
 }

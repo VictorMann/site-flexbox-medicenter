@@ -12,6 +12,10 @@
 	display: flex;
 	justify-content: center;
 }
+.flx-dir-column {
+	display: flex;
+	flex-direction: column;
+}
 .container {
 	width: 990px;
 	min-height: 10px;
@@ -68,4 +72,27 @@ header {
 	background: url(../images/img1.jpg) no-repeat center;
 	background-size: cover;
 	min-height: 690px;
+}
+.b_headline {
+	background: @cor-teste;
+	justify-content: center;
+	flex: 1;
+
+	h1,
+	h2 {
+		color: white;
+		font-size: 4em;
+		text-shadow: 0 1px 0 #555;
+		padding: 0;
+		margin: 0;
+		max-width: 300px;
+	}
+	h2 {
+		font-size: 1.5em;
+		max-width: 350px;
+	}
+}
+.b_options {
+	background: darken(@cor-teste, 10);
+	height: 210px;
 }

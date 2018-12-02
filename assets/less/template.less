@@ -83,10 +83,14 @@ header {
 	background-size: cover;
 	color: @destaque-font-color;
 	min-height: 690px;
+
+	.container {
+		justify-content: space-between;
+	}
 }
 .b_headline {
 	justify-content: center;
-	flex: 2;
+	padding: 6em 0;
 
 	h1,
 	h2 {
@@ -103,7 +107,7 @@ header {
 	}
 }
 .b_options {
-	flex: 1;
+	
 
 	> * {	// .b1, .b2, .b3
 		flex: 1;

@@ -1,6 +1,10 @@
 // variaveis
 @cor-teste: #AAA;
 @destaque-font-color: #fff;
+@cor-a: #2b4c99;
+@cor-b: #0079c7;
+@cor-c: #39AAE1;
+
 // tmp
 .bg {
 	background-color: @cor-teste;
@@ -8,6 +12,7 @@
 
 
 // base
+.flx,
 .flx-c {
 	display: flex;
 	justify-content: center;
@@ -71,7 +76,7 @@ header {
 
 		&.active,
 		&:hover {
-			background: #39AAE1;
+			background: @cor-c;
 			color: #FFF;
 		}
 	}
@@ -112,9 +117,9 @@ header {
 		flex: 1;
 		padding: 20px;
 	}
-	.b2 {background: #0079c7;};
-	.b3 {background: #2b4c99;};
-	.b1 {background: #39AAE1;};
+	.b1 {background: @cor-c};
+	.b2 {background: @cor-b};
+	.b3 {background: @cor-a};
 	
 	.b-title {
 		font-size: 1.2em;
@@ -160,7 +165,7 @@ header {
 	bottom: -.5em;
 	display: block;
 	width: 3em;
-	border-bottom: 2px solid #39aae1;
+	border-bottom: 2px solid @cor-c;
 }
 .w {
 	flex: 2;
@@ -181,12 +186,12 @@ header {
 	span {
 		position: relative;
 		display: inline-block;
-		background: #2b4c99;
+		background: @cor-a;
 		color: #FFF;
 		padding: .4em .8em;
 	}
 	span + span {
-		background: #0079c7; 
+		background: @cor-b; 
 	}
 	span:first-child::after {
 		content: '';
@@ -204,4 +209,44 @@ header {
 }
 .a {
 	flex: 1;
+}
+/** footer **/
+footer {
+	background: #1e1e1e;
+
+	.w_title {
+		color: white;
+	}
+}
+.f-m {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 2em;
+	color: white;
+
+	li {
+		flex: 1;
+		background: @cor-c;
+		padding: 1.4em;
+
+		&:nth-child(3n+2) {background: @cor-b}
+		&:nth-child(3n+3) {background: @cor-a}
+		
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+
+	h4 {
+		font-weight: normal;
+		font-size: 1.2em;
+		margin-top: 0;
+	}
+}
+.ff {
+	.w_art {
+		flex: 1;
+	}
 }

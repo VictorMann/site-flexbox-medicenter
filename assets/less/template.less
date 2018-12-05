@@ -4,6 +4,7 @@
 @cor-a: #2b4c99;
 @cor-b: #0079c7;
 @cor-c: #39AAE1;
+@mobile: ~'(max-width: 768px)';
 
 // tmp
 .bg {
@@ -59,11 +60,29 @@ header {
 	display: flex;
 	align-items: center;
 
+	nav {
+		transition: right .3s ease-in-out;
+
+		@media @mobile {
+			position: fixed;
+			background: #EEE;
+			top: 0;
+			right: -80%;
+			bottom: 0;
+			width: 80%;
+			max-width: 300px;
+		}
+	}
 	ul {
+		clear: both;
 		display: flex;
 		list-style: none;
 		padding: 0;
 		margin: 0;
+
+		@media @mobile {
+			flex-direction: column;
+		}
 	}
 
 	a {
@@ -113,6 +132,10 @@ header {
 }
 .b_options {
 	
+	@media @mobile {
+		flex-direction: column;	
+	}
+
 	> * {	// .b1, .b2, .b3
 		flex: 1;
 		padding: 20px;
@@ -167,6 +190,11 @@ header {
 	width: 3em;
 	border-bottom: 2px solid @cor-c;
 }
+.content {
+	@media @mobile {
+		flex-direction: column;
+	}
+}
 .w {
 	flex: 2;
 
@@ -218,6 +246,14 @@ footer {
 	.w_title {
 		color: white;
 	}
+	.realce {
+		color: darken(white, 30);
+	}
+	.copy {
+		border-top: 1px solid darken(white, 80);
+		padding: 1em 0;
+		font-size: .9em;
+	}
 }
 .f-m {
 	list-style: none;
@@ -225,6 +261,10 @@ footer {
 	margin: 0;
 	margin-bottom: 2em;
 	color: white;
+
+	@media @mobile {
+		flex-direction: column;
+	}
 
 	li {
 		flex: 1;
@@ -247,7 +287,131 @@ footer {
 	}
 }
 .ff {
+
+	@media @mobile {
+		flex-direction: column;
+	}
+
 	.w_art {
 		flex: 1;
+	}
+	.w_body {
+		> * {
+			margin-bottom: 2em;
+		}
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	address.flx {
+		justify-content: initial;
+
+		> * {
+			flex: 1;
+			align-self: flex-end;
+		}
+	}
+	.redes.flx {
+		justify-content: initial;
+
+		li {
+			flex-wrap: wrap;
+		}
+		a {
+			display: inline-block;
+			text-indent: -999em;
+			width: 2em;
+			height: 2em;
+			background: fade(tomato, 20);
+			margin-right: .5em;
+			overflow: hidden;
+		}
+	}
+	.posts {
+		li {
+			position: relative;
+			padding-left: 1em;
+			margin-bottom: 2em;
+
+			&::before {
+				content: "\00bb";
+				position: absolute;
+				left: 0;
+			}
+		}
+		.dt-public {
+			display: block;
+			color: @cor-b;
+			font-size: .8em;
+		}
+	}
+}
+
+/** botao mobile **/
+.btn-mobile {
+	display: none;
+	text-indent: -999em;
+	width: 3em;
+	height: 3em;
+	border-color: @cor-c;
+	border-width: 20px;
+	border-top-style: double;
+	border-bottom-style: solid;
+	border-bottom-width: 18 / 2px;
+
+	@media @mobile {
+		display: block;
+	}
+}
+.btn-mobile-close {
+	position: relative;
+	display: none;
+	text-indent: -999rem;
+	font-size: 1px;
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: 1rem;
+	float: right;
+
+	&::after {
+		content: 'x';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-indent: 0;
+		font-size: 1rem;
+		color: #888;
+	}
+
+	@media @mobile {
+		display: block;
+	}
+}
+html.active {
+
+	&::before {
+		content: '';
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: fade(#000, 30);
+
+		@media @mobile {
+			display: block;
+		}
+	}
+
+	.menu nav {
+		right: 0;
 	}
 }
